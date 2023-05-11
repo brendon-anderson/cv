@@ -1,0 +1,417 @@
+\documentclass[11pt]{article}
+
+% geometry definitions
+\usepackage[margin=1in]{geometry}
+\newcommand{\sectionwidth}{1in}		% define the width of left column
+\newcommand{\globalitemsep}{0em}	% item sep for lists and bib
+\newcommand{\globaltopsep}{0em}		% top sep for lists and bib
+\newlength{\globalleftmargin}
+\setlength{\globalleftmargin}{2em}	% left margin for lists and bib
+\addtolength{\globalleftmargin}{\sectionwidth}	% add section width
+\newcommand{\rulepadding}{0.5\baselineskip}	% added padding above and below title rules
+\newlength{\upperpadding}
+\setlength{\upperpadding}{-1ex}		% default upper padding for title rules (-1ex space makes gaps above and below title rule even without any additional padding)
+\addtolength{\upperpadding}{\rulepadding}	% add additional padding
+\newcommand{\subsectionskip}{\baselineskip}	% skip between subsections
+\usepackage{changepage,etoolbox}			% to indent an entire paragraph
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}	% remove vertical spacing
+
+% custom formatting and style
+\usepackage{titlesec}		% allow for section formatting
+\titleformat{\section}[runin]{}{}{0em}{%
+	\vspace*{\rulepadding}% adds padding below title rules
+	\titlerule\newline%
+	\vspace*{-\baselineskip}% aligns section and subsection
+	\bfseries% font formatting
+}
+\titlespacing{\section}{0em}{\upperpadding}{*}	% -1ex space to make gap between titlerule even, plus additional \rulepadding
+\titleformat{\subsection}[runin]{\bfseries}{}{0em}{}
+\titlespacing{\subsection}{\sectionwidth}{0em}{*}
+\titleformat{\subsubsection}[runin]{\itshape}{}{0em}{}[:]
+\titlespacing{\subsubsection}{\sectionwidth}{0em}{*}
+
+% hyperlinks
+\usepackage{hyperref}		% custom hyperlinks
+\hypersetup{%
+	colorlinks=true,%
+	allcolors=[RGB]{70,115,180}%
+}							% hyperlink style settings
+
+% custom title
+\usepackage{titling}		% allow for custom titles
+\renewcommand{\maketitle}{%
+	\begin{center}
+		{\huge\bfseries\theauthor}\\
+		\vspace*{1em}% gap between author and contact
+		{\href{mailto:\theemail}{\texttt{\theemail}}\quad\thephone\quad\href{https://\thewebsite}{\texttt{\thewebsite}}\quad\href{\thescholar}{Google Scholar}}\\
+		\vspace*{0em}% gap after contact
+	\end{center}%
+}							% title formatting
+
+% custom lists
+\usepackage{enumitem}		% allow for custom lists
+\setlist{%
+	itemsep=\globalitemsep,%
+	topsep=\globaltopsep,%
+	leftmargin=\globalleftmargin,%
+	label=$\vcenter{\hbox{\tiny$\bullet$}}$%
+}							% set default itemize/enumerate parameters
+
+% custom page numbering
+\usepackage{lastpage}		% determines last page number
+\usepackage{fancyhdr}		% custom footers for page numbering
+\pagestyle{fancy}			% use fancyhdr page numbering
+\renewcommand{\headrulewidth}{0em}	% remove headrule from fancyhdr
+\fancyhf{}					% clear default footer
+\fancyfoot[C]{%
+	\thepage\ of \pageref*{LastPage}%
+}							% custom page numbering
+
+% custom bibliography style
+\bibliographystyle{cvstyle}	% use cvstyle.bst for bold author name
+\makeatletter
+\renewcommand\refname{Publications}	% change bibliography heading
+\renewenvironment{thebibliography}[1]
+{\section*{\refname}%
+	* indicates equal contribution.\\
+	\vspace*{\subsectionskip}
+	\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\setlength\itemsep{\globalitemsep}
+		\setlength\topsep{\globaltopsep}
+		\leftmargin\globalleftmargin
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}
+	}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
+\makeatother
+
+% other modifications and custom commands
+\usepackage{bookmark}		% remove bookmark heirarchy warning
+\setlength\parindent{0em}	% disable automatic indentation
+\newcommand{\cvdate}[1]{\hfill#1}			% date style
+\newcommand{\cvdates}[2]{\hfill#1\,--\,#2}	% dates style
+\newcommand{\Cpp}{%
+	C\nolinebreak[4]%
+	\hspace*{-.05em}%
+	\raisebox{.4ex}{\tiny\bf ++}%
+}							% C++ symbol with centered + signs
+
+% long/short cv versions
+\usepackage{comment}
+\includecomment{gpa-off}
+\excludecomment{gpa-on}
+\excludecomment{coursework}
+
+
+
+
+
+
+
+
+\begin{document}
+	
+	% title
+	\title{}
+	\date{}
+	\author{Brendon G.\ Anderson}
+	\newcommand{\theemail}{bganderson@berkeley.edu}
+	\newcommand{\thephone}{(760) 473-3007}
+	\newcommand{\thewebsite}{brendon-anderson.github.io}
+	\newcommand{\thescholar}{https://scholar.google.com/citations?user=-zepUjMAAAAJ&hl=en&oi=ao}
+	\maketitle
+
+	% research interests
+	\section{\texorpdfstring{Research \\[\baselineskip] Interests}{Research Interests}}
+	\hfill\vspace*{-2\baselineskip}
+
+	\begin{adjustwidth}{\sectionwidth}{}I'm interested in mathematical problems in the areas of \textbf{optimization}, \textbf{machine learning}, and \textbf{control theory}. My current projects surround provable robustness properties of neural networks using the framework of optimization theory.\end{adjustwidth}
+	
+	% education
+	\section{Education}
+	\subsection{University of California, Berkeley}
+	\cvdates{Aug.\ 2018}{Present}
+	
+	\hspace*{\sectionwidth}Ph.D.\ in Control Theory
+	
+	\subsubsection{Advisor}
+	\href{https://people.eecs.berkeley.edu/~sojoudi/}{Somayeh Sojoudi}
+	
+	\subsubsection{Research Areas}
+	Optimization, Machine Learning, Control Theory
+	
+	\subsubsection{Minors}
+	Mathematics, Optimization
+	
+	\begin{gpa-on}
+		\subsubsection{GPA}
+		$3.904/4.0$
+	\end{gpa-on}
+	
+	\vspace*{\subsectionskip}
+
+	\subsection{University of California, Berkeley}
+	\cvdates{Aug.\ 2022}{Present}
+
+	\hspace*{\sectionwidth}M.A.\ in Mathematics
+
+	\begin{gpa-on}
+		\subsubsection{GPA}
+		$3.925/4.0$
+	\end{gpa-on}
+
+	\vspace*{\subsectionskip}
+	
+	\subsection{University of California, Berkeley}
+	\cvdates{Aug.\ 2018}{May 2020}
+	
+	\hspace*{\sectionwidth}M.S.\ in Control Theory
+	
+	\subsubsection{Thesis}
+	\href{https://brendon-anderson.github.io/files/publications/ms_thesis.pdf}{``Towards optimality and robustness guarantees for data-driven learning \\
+	\hspace*{\sectionwidth}and decision making''}
+	
+	\begin{gpa-on}
+		\subsubsection{GPA}
+		$4.0/4.0$
+	\end{gpa-on}
+	
+	\vspace*{\subsectionskip}
+	
+	\subsection{University of California, Los Angeles}
+	\cvdates{Sep.\ 2015}{Mar.\ 2018}
+	
+	\hspace*{\sectionwidth}B.S.\ in Mechanical Engineering
+	\begin{gpa-off}
+		(\textit{summa cum laude})
+	\end{gpa-off}
+	
+	\subsubsection{Technical Breadth Area}
+	Mathematics
+	
+	\begin{gpa-on}
+		\subsubsection{GPA}
+		$4.0/4.0$ (\textit{summa cum laude})
+	\end{gpa-on}
+	
+	% research experience
+	\section{\texorpdfstring{Research \\[\baselineskip] Experience}{Research Experience}}
+	\hfill\vspace*{-2\baselineskip}
+
+	\subsection{Graduate Student Researcher --- UC Berkeley}
+	\cvdates{Aug.\ 2018}{Present}
+	
+	\subsubsection{Advisor}
+	\href{https://people.eecs.berkeley.edu/~sojoudi/}{Somayeh Sojoudi}
+	
+	\vspace*{\subsectionskip}
+	
+	\subsection{Jr.\ Development Engineer --- UCLA Engineering}
+	\cvdates{Jan.\ 2018}{Jun.\ 2018}
+	
+	\subsubsection{Advisor}
+	\href{http://www.seas.ucla.edu/mcloskey/}{Robert M'Closkey}
+	
+	\vspace*{\subsectionskip}
+	
+	\subsection{Research Assistant --- UCLA Mathematics}
+	\cvdates{Jun.\ 2017}{Aug.\ 2017}
+	
+	\subsubsection{Advisors}
+	\href{https://brae.calpoly.edu/faculty-and-staff-haberland}{Matt Haberland}, \href{https://sites.google.com/msu.edu/turanova/home}{Olga Turanova}, and \href{http://www.math.ucla.edu/~bertozzi/}{Andrea L.\ Bertozzi}
+
+	% awards
+	\section{Awards}
+	\begin{enumerate}[label={\arabic*.}]
+		\item \href{https://gsi.berkeley.edu/programs-services/award-programs/ogsi/ogsi-recipients-2022-2023/}{Outstanding Graduate Student Instructor Award}, UC Berkeley
+		\cvdate{Mar.\ 2023} \\
+		\textit{Schoolwide award for teaching excellence.}
+		\item INFORMS Data Mining Best Student Paper Award Runner-Up
+		\cvdate{Oct.\ 2022}
+		\item Graduate Division Block Grant Award, UC Berkeley
+		\cvdate{May.\ 2022}
+		\item John and Janet McMurtry Fellowship, UC Berkeley
+		\cvdate{Dec.\ 2020} \\
+		\textit{Departmental award for academic excellence, sole recipient.}
+		\item Travel Support Award, Conference on Decision and Control
+		\cvdate{Dec.\ 2020}
+		\item Graduate Assembly Professional Development Award, UC Berkeley
+		\cvdate{Aug.\ 2020}
+		\item Graduate Division Block Grant Award, UC Berkeley
+		\cvdate{Apr.\ 2019}
+		\item \href{https://samueli.ucla.edu/2018-ucla-samueli-commencement-awards/}{Harry M. Showman Prize}, UCLA
+		\cvdate{Jun.\ 2018} \\
+		\textit{Schoolwide research award, sole undergraduate recipient.}
+	\item Jonathan David Wolfe Memorial Scholarship, UCLA
+		\cvdate{Apr.\ 2018} \\
+		\textit{Departmental award for academic excellence, one of two recipients.}
+	\end{enumerate}
+	
+	% publications
+	\nocite{*}
+	\bibliography{publications}
+	
+	% invited talks
+	\section{\texorpdfstring{Invited Talks \\[\baselineskip] and Poster \\ Presentations}{Invited Talks and Poster Presentations}}
+	\hfill\vspace*{-3\baselineskip}
+	\begin{enumerate}[label={\arabic*.}]
+		\item INFORMS Annual Meeting, Indianapolis, IN \cvdate{Oct.\ 2022}\\
+		``Projected randomized smoothing for certified adversarial robustness.'' Research talk.
+		\item NorCal Control Workshop, UC Santa Cruz, Santa Cruz, CA \cvdate{June 2022}\\
+		``Certified robustness via locally biased randomized smoothing.'' Research poster presentation.
+		\item Tsinghua-Berkeley Shenzhen Institute, Berkeley, CA \cvdate{May 2022}\\
+		``Robust neural networks.'' Guest lecture for \textit{Optimization Theory and Machine Learning}.
+		\item INFORMS Annual Meeting, Anaheim, CA \cvdate{Oct.\ 2021}\\
+		``Data-driven certification of neural networks with random inputs.'' Research talk.
+		\item Tsinghua-Berkeley Shenzhen Institute, Berkeley, CA \cvdate{May 2021}\\
+		``Robust neural networks.'' Guest lecture for \textit{Optimization Theory and Machine Learning}.
+		\item University of Michigan, Ann Arbor, MI \cvdate{Apr.\ 2021}\\
+		``Robust neural networks.'' Guest lecture for \textit{Advanced Topics in Applied Data Analytics} (IOE 491).
+		\item INFORMS Annual Meeting, National Harbor, MD \cvdate{Nov.\ 2020}\\
+		``Partition-based convex relaxations for robustness certification of ReLU neural networks.'' Research talk.
+		\item Conference on Control Technology and Applications, Montr\'eal \cvdate{Aug.\ 2020}\\
+		``Robustness analysis of neural networks.'' Tutorial session.
+		\item Institute for Pure and Applied Mathematics, Los Angeles, CA \cvdate{Aug.\ 2017}\\
+		``Robotic swarm analysis.'' Research talk.
+	\end{enumerate}
+	
+	% teaching
+	\section{Teaching}
+
+	\subsection{REU Mentor --- UC Berkeley}
+	\cvdate{Summer 2023}
+	
+	\begin{adjustwidth}{\sectionwidth}{}Mentor for \href{https://eecs.berkeley.edu/resources/undergrads/research/superb}{SUPERB Research Experience for Undergraduates (REU)} program, UC Berkeley Electrical Engineering and Computer Sciences (EECS) Department.\end{adjustwidth}
+
+	\subsubsection{Mentee}
+	\href{https://www.linkedin.com/in/owen-frausto-39786a217}{Owen Frausto}
+	
+	\subsubsection{Project}
+	``Optimal transport over dynamical systems''
+	
+	\vspace*{\subsectionskip}
+	
+	\subsection{Graduate Student Instructor --- UC Berkeley}
+	\begin{enumerate}[label={\arabic*.}]
+		\item \href{https://classes.berkeley.edu/content/2022-fall-eleng-227bt-001-lec-001}{\textit{Convex Optimization}} (EE 227BT) \cvdate{Fall 2022} \\
+		\textbf{\href{https://gsi.berkeley.edu/programs-services/award-programs/ogsi/ogsi-recipients-2022-2023/}{Recipient of the Outstanding Graduate Student Instructor Award}}. \\
+		Student ratings: Mean $97.3\%$, Median $100\%$, Standard deviation $6.7\%$.
+		\item \href{https://lavaei.ieor.berkeley.edu/Course_IEOR160_Fall_2021.html}{\textit{Nonlinear and Discrete Optimization}} (IEOR 160) \cvdate{Fall 2021} \\
+		Student ratings: Mean $93.4\%$, Median $100\%$, Standard deviation $9.6\%$.
+		\item \href{https://lavaei.ieor.berkeley.edu/Course_IEOR160_Fall_2020.html}{\textit{Nonlinear and Discrete Optimization}} (IEOR 160) \cvdate{Fall 2020} \\
+		Student ratings: Mean $90.8\%$, Median $100\%$, Standard deviation $15.2\%$.
+	\end{enumerate}
+	
+	\vspace*{\subsectionskip}
+
+	\subsection{Guest Lecturer --- UC Berkeley}
+
+	\begin{enumerate}[label={\arabic*.}]
+		\item \href{https://lavaei.ieor.berkeley.edu/Course_IEOR160_Fall_2022.html}{\textit{Nonlinear and Discrete Optimization}} (IEOR 160) \cvdate{Fall 2022}
+		\item \href{https://lavaei.ieor.berkeley.edu/Course_IEOR162_Fall_2022.html}{\textit{Linear Programming and Network Flows}} (IEOR 162) \cvdate{Fall 2022}
+		\item \href{https://lavaei.ieor.berkeley.edu/Course_IEOR160_Fall_2021.html}{\textit{Nonlinear and Discrete Optimization}} (IEOR 160) \cvdate{Fall 2021}
+	\end{enumerate}
+
+	\vspace*{\subsectionskip}
+	
+	\subsection{Supplemental Instructor --- Palomar College}	
+	\begin{enumerate}[label={\arabic*.}]
+		\item \textit{Electromagnetism} (PHYS 231) \cvdate{Spring 2015}
+		\item \textit{General Chemistry} (CHEM 115) \cvdate{Fall 2014, Spring 2015}
+	\end{enumerate}
+	
+	% professional activities
+	\section{\texorpdfstring{Professional \\[\baselineskip] Activities}{Professional Activities}}
+	\hfill\vspace*{-2\baselineskip}
+	\begin{enumerate}[label={\arabic*.}]
+		\item Co-organizer of the \href{https://www.ml-verification.com/}{$2$nd Workshop on Formal Verification of Machine Learning (WFVML)}, International Conference on Machine Learning (ICML), 2023.
+		\item Reviewer for Conference on Neural Information Processing Systems (NeurIPS), 2023.
+		\item Reviewer for Conference on Decision and Control (CDC), 2023.
+		\item Co-chair of the second morning session, NorCal Control Workshop, 2023.
+		\item Reviewer for International Conference on Machine Learning (ICML), 2023.
+		\item Reviewer for Learning for Dynamics and Control Conference (L4DC), 2023.
+		\item Graduate Student Mentor for incoming students, hosted by UC Berkeley Mechanical Engineering Graduate Student Council, 2022.
+		\item Reviewer for Conference on Neural Information Processing Systems (NeurIPS), 2022.
+		\item Reviewer for Conference on Decision and Control (CDC), 2022.
+		\item Organizer and co-chair of the session ``Safety and Robustness in Machine Learning,'' INFORMS Annual Meeting, 2022.
+		\item Reviewer for IEEE Control Systems Letters, 2022.
+		\item Reviewer for IEEE Open Journal of Control Systems, 2022.
+		\item Organizer and co-chair of the session ``Robustness of Neural Networks,'' INFORMS Annual Meeting, 2021.
+		\item Graduate Student Mentor for incoming students, hosted by UC Berkeley Mechanical Engineering Graduate Student Council, 2021.
+		\item Reviewer for Conference on Decision and Control (CDC), 2021.
+		\item Reviewer for IEEE Transactions on Automatic Control, 2021.
+		\item Reviewer for Artificial Intelligence and Statistics Conference (AISTATS), 2020.
+		\item Reviewer for American Control Conference (ACC), 2020.
+		\item Peer Advisor for the Bay Area Graduate Pathways to Stem (GPS) program, hosted by UC Berkeley Engineering and Stanford Engineering, 2020.
+		\item Grant proposal contributor; assisted with writing DARPA funding proposal, 2019.
+		\item Chair of the session ``Data Analytics,'' 57th Annual Allerton Conference on Communication, Control, and Computing, 2019.
+	\end{enumerate}
+	
+	% relevant coursework
+	\begin{coursework}
+		\section{\texorpdfstring{Relevant \\[\baselineskip] Coursework}{Relevant Coursework}}
+		\hfill\vspace*{-2\baselineskip}
+		
+		\subsection{Optimization}
+		\begin{enumerate}[label={\arabic*.}]
+			\item \textit{Nonlinear Programming}, Professor Javad Lavaei
+			\item \textit{Convex Optimization}, Professors Somayeh Sojoudi and Laurent El Ghaoui
+			\item \textit{Optimization Models}, Professors Laurent El Ghaoui and Alex Bayen
+		\end{enumerate}
+		
+		\vspace*{\subsectionskip}
+		
+		\subsection{Machine Learning}
+		\begin{enumerate}[label=\arabic*.]
+			\item \textit{Statistical Learning Theory} (audit), Professors Ben Recht and Moritz Hardt
+			\item \textit{Learning and Optimization}, Professor Anil Aswani
+			\item \textit{Deep Learning} (online), Professor Andrew Ng
+			\item \textit{Machine Learning} (online), Professor Andrew Ng
+		\end{enumerate}
+		
+		\vspace*{\subsectionskip}
+		
+		\subsection{Dynamical Systems and Control Theory}
+		\begin{enumerate}[label=\arabic*.]
+			\item \textit{Population Games}, Professor Murat Arcak
+			\item \textit{Nonlinear Systems: Analysis, Stability, and Control}, Professor Claire Tomlin
+			\item \textit{Advanced Control Theory II} (LQ control, stochastic estimation and control, tracking and adaptive control), Professor Masayoshi Tomizuka
+			\item \textit{Advanced Control Theory I} (linear systems, Lyapunov stability, state observer feedback, LQR), Professor Roberto Horowitz
+			\item \textit{Linear Dynamical Systems}, Professor Robert M'Closkey
+			\item \textit{Digital Control}, Professor Tsu-Chin Tsao
+		\end{enumerate}
+		
+		\vspace*{\subsectionskip}
+		
+		\subsection{Mathematics}
+		\begin{enumerate}[label=\arabic*.]
+			\item \textit{Groups, Rings, and Fields}, Professor Richard Borcherds
+			\item \textit{Diffierentiable Manifolds}, Professor Richard Bamler
+			\item \textit{Topology and Analysis II} (functional analysis), Professor Michael Christ
+			\item \textit{Topology and Analysis I} (measure theory), Professor Alan Hammond
+			\item \textit{Engineering Mathematics} (single course: linear algebra, optimization, and probability), Professors Andrew Packard, Somayeh Sojoudi, and Kameshwar Poolla
+			\item \textit{Analysis} (\textit{Real}; \textit{Complex}; \textit{Numerical})
+			\item \textit{Differential Equations} (\textit{Ordinary}; \textit{Partial})
+		\end{enumerate}
+		
+		\vspace*{\subsectionskip}
+
+		\subsection{Statistics}
+		\begin{enumerate}[label=\arabic*.]
+			\item \textit{Theoretical Statistics II} (high-dimensional), Professor Yan Shuo Tan
+			\item \textit{Theoretical Statistics I} (classical), Professor Will Fithian
+		\end{enumerate}
+	\end{coursework}
+	
+\end{document}

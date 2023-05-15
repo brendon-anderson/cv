@@ -42,10 +42,9 @@ Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
 \bibitem{bai2023mixing}
 Y.~Bai, \textbf{B.~G. Anderson}, and S.~Sojoudi,
   ``\href{https://bai-yt.github.io/files/publications/MixedClassifier_PrePrint.pdf}{Mixing
-  classifiers to alleviate the accuracy-robustness trade-off},'' {\em Under
-  review}, 2023.
-\newblock URL
-  \url{https://bai-yt.github.io/files/publications/MixedClassifier_PrePrint.pdf}.
+  classifiers to alleviate the accuracy-robustness trade-off},'' in {\em
+  Proceedings of the 7th IEEE Conference on Control Technology and Applications
+  (CCTA)}, 2023.
 
 \bibitem{anderson2022overview}
 \textbf{B.~G. Anderson*}, T.~Gautam*, and S.~Sojoudi,

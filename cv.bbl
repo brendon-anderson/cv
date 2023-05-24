@@ -38,7 +38,7 @@ Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
   {\em Under review}, 2023.
 \newblock {\bf Second place method on
   \href{https://robustbench.github.io/#div_cifar100_Linf_heading}{RobustBench}
-  CIFAR-100 $\ell_\infty$-leaderboard in May 2023}. URL
+  CIFAR-100 $\ell_\infty$-leaderboard as of May 2023}. URL
   \url{https://bai-yt.github.io/files/publications/AdaptiveSmoothing_PrePrint.pdf}.
 
 \bibitem{bai2023mixing}

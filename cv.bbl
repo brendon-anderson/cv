@@ -1,13 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{anderson2023tight}
-\textbf{B.~G. Anderson}, S.~Pfrommer, and S.~Sojoudi,
-  ``\href{https://brendon-anderson.github.io/files/publications/anderson2023tight.pdf}{Tight
-  certified robustness via min-max representations of {ReLU} neural
-  networks},'' {\em Under review}, 2023.
-\newblock URL
-  \url{https://brendon-anderson.github.io/files/publications/anderson2023tight.pdf}.
-
 \bibitem{anderson2023towards}
 \textbf{B.~G. Anderson}, Z.~Ma, J.~Li, and S.~Sojoudi,
   ``\href{https://arxiv.org/pdf/2101.09306.pdf}{Towards optimal branching of
@@ -40,6 +32,13 @@ Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
   \href{https://robustbench.github.io/#div_cifar100_Linf_heading}{RobustBench}
   CIFAR-100 $\ell_\infty$-leaderboard as of May 2023}. URL
   \url{https://bai-yt.github.io/files/publications/AdaptiveSmoothing_PrePrint.pdf}.
+
+\bibitem{anderson2023tight}
+\textbf{B.~G. Anderson}, S.~Pfrommer, and S.~Sojoudi,
+  ``\href{https://brendon-anderson.github.io/files/publications/anderson2023tight.pdf}{Tight
+  certified robustness via min-max representations of {ReLU} neural
+  networks},'' in {\em Proceedings of the 62nd IEEE Conference on Decision and
+  Control (CDC)}, 2023.
 
 \bibitem{bai2023mixing}
 Y.~Bai, \textbf{B.~G. Anderson}, and S.~Sojoudi,

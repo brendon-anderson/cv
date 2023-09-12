@@ -15,14 +15,6 @@ S.~Pfrommer*, \textbf{B.~G. Anderson*}, J.~Piet, and S.~Sojoudi,
 \newblock URL
   \url{https://brendon-anderson.github.io/files/publications/pfrommer2023asymmetric.pdf}.
 
-\bibitem{pfrommer2023projected}
-S.~Pfrommer, \textbf{B.~G. Anderson}, and S.~Sojoudi,
-  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2023projected.pdf}{Projected
-  randomized smoothing for certified adversarial robustness},'' {\em Under
-  review}, 2023.
-\newblock {\bf INFORMS Data Mining Best Student Paper Award Runner-Up}. URL
-  \url{https://brendon-anderson.github.io/files/publications/pfrommer2023projected.pdf}.
-
 \bibitem{bai2023avoiding}
 Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
   ``\href{https://bai-yt.github.io/files/publications/AdaptiveSmoothing_PrePrint.pdf}{Improving
@@ -32,6 +24,13 @@ Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
   \href{https://robustbench.github.io/#div_cifar100_Linf_heading}{RobustBench}
   CIFAR-100 $\ell_\infty$-leaderboard as of May 2023}. URL
   \url{https://bai-yt.github.io/files/publications/AdaptiveSmoothing_PrePrint.pdf}.
+
+\bibitem{pfrommer2023projected}
+S.~Pfrommer, \textbf{B.~G. Anderson}, and S.~Sojoudi,
+  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2023projected.pdf}{Projected
+  randomized smoothing for certified adversarial robustness},'' {\em
+  Transactions on Machine Learning Research (TMLR)}, 2023.
+\newblock {\bf INFORMS Data Mining Best Student Paper Award Runner-Up}.
 
 \bibitem{anderson2023tight}
 \textbf{B.~G. Anderson}, S.~Pfrommer, and S.~Sojoudi,

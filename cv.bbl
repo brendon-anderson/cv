@@ -7,14 +7,6 @@
   certification},'' {\em Under review}, 2023.
 \newblock URL \url{https://arxiv.org/pdf/2101.09306.pdf}.
 
-\bibitem{pfrommer2023asymmetric}
-S.~Pfrommer*, \textbf{B.~G. Anderson*}, J.~Piet, and S.~Sojoudi,
-  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2023asymmetric.pdf}{Asymmetric
-  certified robustness via feature-convex neural networks},'' {\em Under
-  review}, 2023.
-\newblock URL
-  \url{https://brendon-anderson.github.io/files/publications/pfrommer2023asymmetric.pdf}.
-
 \bibitem{bai2023avoiding}
 Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
   ``\href{https://bai-yt.github.io/files/publications/AdaptiveSmoothing_PrePrint.pdf}{Improving
@@ -24,6 +16,12 @@ Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
   \href{https://robustbench.github.io/#div_cifar100_Linf_heading}{RobustBench}
   CIFAR-100 $\ell_\infty$-leaderboard as of May 2023}. URL
   \url{https://bai-yt.github.io/files/publications/AdaptiveSmoothing_PrePrint.pdf}.
+
+\bibitem{pfrommer2023asymmetric}
+S.~Pfrommer*, \textbf{B.~G. Anderson*}, J.~Piet, and S.~Sojoudi,
+  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2023asymmetric.pdf}{Asymmetric
+  certified robustness via feature-convex neural networks},'' in {\em Advances
+  in Neural Information Processing Systems (NeurIPS)}, 2023.
 
 \bibitem{pfrommer2023projected}
 S.~Pfrommer, \textbf{B.~G. Anderson}, and S.~Sojoudi,

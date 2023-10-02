@@ -1,5 +1,18 @@
 \begin{thebibliography}{10}
 
+\bibitem{frausto2023optimal}
+O.~Frausto*, \textbf{B.~G. Anderson*}, S.~Nair, and S.~Sojoudi, ``Optimal
+  transport-based robust tube {MPC} for distribution steering,'' {\em In
+  preparation}, 2023.
+
+\bibitem{anderson2023dissipativity}
+\textbf{B.~G. Anderson}, S.~Sojoudi, and M.~Arcak,
+  ``\href{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity.pdf}{Dissipativity
+  theory for evolutionary games on infinite strategy sets},'' {\em Preprint},
+  2023.
+\newblock URL
+  \url{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity.pdf}.
+
 \bibitem{anderson2023towards}
 \textbf{B.~G. Anderson}, Z.~Ma, J.~Li, and S.~Sojoudi,
   ``\href{https://arxiv.org/pdf/2101.09306.pdf}{Towards optimal branching of

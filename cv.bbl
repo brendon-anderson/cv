@@ -32,23 +32,22 @@ Y.~Bai, \textbf{B.~G. Anderson}, A.~Kim, and S.~Sojoudi,
 
 \bibitem{pfrommer2023asymmetric}
 S.~Pfrommer*, \textbf{B.~G. Anderson*}, J.~Piet, and S.~Sojoudi,
-  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2023asymmetric.pdf}{Asymmetric
-  certified robustness via feature-convex neural networks},'' in {\em Advances
-  in Neural Information Processing Systems (NeurIPS)}, 2023.
+  ``\href{https://arxiv.org/pdf/2302.01961.pdf}{Asymmetric certified robustness
+  via feature-convex neural networks},'' in {\em Advances in Neural Information
+  Processing Systems (NeurIPS)}, 2023.
 
 \bibitem{pfrommer2023projected}
 S.~Pfrommer, \textbf{B.~G. Anderson}, and S.~Sojoudi,
-  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2023projected.pdf}{Projected
-  randomized smoothing for certified adversarial robustness},'' {\em
-  Transactions on Machine Learning Research (TMLR)}, 2023.
+  ``\href{https://arxiv.org/pdf/2309.13794.pdf}{Projected randomized smoothing
+  for certified adversarial robustness},'' {\em Transactions on Machine
+  Learning Research (TMLR)}, 2023.
 \newblock {\bf INFORMS Data Mining Best Student Paper Award Runner-Up}.
 
 \bibitem{anderson2023tight}
 \textbf{B.~G. Anderson}, S.~Pfrommer, and S.~Sojoudi,
-  ``\href{https://brendon-anderson.github.io/files/publications/anderson2023tight.pdf}{Tight
-  certified robustness via min-max representations of {ReLU} neural
-  networks},'' in {\em Proceedings of the 62nd IEEE Conference on Decision and
-  Control (CDC)}, 2023.
+  ``\href{https://arxiv.org/pdf/2310.04916.pdf}{Tight certified robustness via
+  min-max representations of {ReLU} neural networks},'' in {\em Proceedings of
+  the 62nd IEEE Conference on Decision and Control (CDC)}, 2023.
 
 \bibitem{bai2023mixing}
 Y.~Bai, \textbf{B.~G. Anderson}, and S.~Sojoudi,

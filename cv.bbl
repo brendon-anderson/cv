@@ -2,11 +2,12 @@
 
 \bibitem{anderson2023dissipativity}
 \textbf{B.~G. Anderson}, S.~Sojoudi, and M.~Arcak,
-  ``\href{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity-long.pdf}{Dissipativity
-  theory for evolutionary games on infinite strategy sets},'' {\em Under review
-  at IEEE Transactions on Automatic Control (TAC)}, 2023.
+  ``\href{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity.pdf}{Evolutionary
+  Games on Infinite Strategy Sets: Convergence to {N}ash through
+  Dissipativity},'' {\em Under review at IEEE Transactions on Automatic Control
+  (TAC)}, 2023.
 \newblock URL:
-  \url{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity-long.pdf}.
+  \url{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity.pdf}.
 
 \bibitem{anderson2023towards}
 \textbf{B.~G. Anderson}, Z.~Ma, J.~Li, and S.~Sojoudi,

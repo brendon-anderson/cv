@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{pfrommer2024transport}
+S.~Pfrommer, \textbf{B.~G. Anderson}, and S.~Sojoudi,
+  ``\href{https://brendon-anderson.github.io/files/publications/pfrommer2024transport.pdf}{Transport
+  of algebraic structure to latent embeddings},'' {\em Under review at
+  International Conference on Machine Learning (ICML)}, 2024.
+\newblock URL:
+  \url{https://brendon-anderson.github.io/files/publications/pfrommer2024transport.pdf}.
+
 \bibitem{anderson2023dissipativity}
 \textbf{B.~G. Anderson}, S.~Sojoudi, and M.~Arcak,
   ``\href{https://brendon-anderson.github.io/files/publications/anderson2023dissipativity.pdf}{Evolutionary

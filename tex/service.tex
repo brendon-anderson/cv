@@ -1,0 +1,21 @@
+\iftoggle{wpaf}{
+	\section{Service}
+	\input{tex/departmental_service.tex}
+	\input{tex/professional_activities.tex}
+
+	\vspace*{\subsectionskip}
+
+	\subsection{Outreach and Engagement}
+	\input{tex/outreach.tex}
+}{
+	\section{\texorpdfstring{Professional \\[\baselineskip] Activities}{Professional Activities}}
+
+	\hfill\vspace*{-2\baselineskip}
+
+	\input{tex/professional_activities.tex}
+
+	\section{\texorpdfstring{Outreach and \\[\baselineskip] Engagement}{Outreach and Engagement}}
+	\hfill\vspace*{-2\baselineskip}
+
+	\input{tex/outreach.tex}
+}

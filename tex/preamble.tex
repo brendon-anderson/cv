@@ -1,0 +1,111 @@
+% geometry definitions
+\usepackage[margin=1in]{geometry}
+\newcommand{\sectionwidth}{1in}		% define the width of left column
+\newcommand{\globalitemsep}{0em}	% item sep for lists and bib
+\newcommand{\globaltopsep}{0em}		% top sep for lists and bib
+\newlength{\globalleftmargin}
+\setlength{\globalleftmargin}{2em}	% left margin for lists and bib
+\addtolength{\globalleftmargin}{\sectionwidth}	% add section width
+\newcommand{\rulepadding}{0.5\baselineskip}	% added padding above and below title rules
+\newlength{\upperpadding}
+\setlength{\upperpadding}{-1ex}		% default upper padding for title rules (-1ex space makes gaps above and below title rule even without any additional padding)
+\addtolength{\upperpadding}{\rulepadding}	% add additional padding
+\newcommand{\subsectionskip}{\baselineskip}	% skip between subsections
+\usepackage{changepage,etoolbox}			% to indent an entire paragraph
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}	% remove vertical spacing
+
+% custom formatting and style
+\usepackage{titlesec}		% allow for section formatting
+\titleformat{\section}[runin]{}{}{0em}{%
+	\vspace*{\rulepadding}% adds padding below title rules
+	\titlerule\newline%
+	\vspace*{-\baselineskip}% aligns section and subsection
+	\bfseries% font formatting
+}
+\titlespacing{\section}{0em}{\upperpadding}{*}	% -1ex space to make gap between titlerule even, plus additional \rulepadding
+\titleformat{\subsection}[runin]{\bfseries}{}{0em}{}
+\titlespacing{\subsection}{\sectionwidth}{0em}{*}
+\titleformat{\subsubsection}[runin]{\itshape}{}{0em}{}[:]
+\titlespacing{\subsubsection}{\sectionwidth}{0em}{*}
+
+% hyperlinks
+\usepackage{hyperref}		% custom hyperlinks
+\hypersetup{%
+	colorlinks=true,%
+	allcolors=[RGB]{70,115,180}%
+}							% hyperlink style settings
+
+% custom title
+\usepackage{titling}		% allow for custom titles
+\renewcommand{\maketitle}{%
+	\begin{center}
+		{\huge\bfseries\theauthor}\\
+		\vspace*{1em}% gap between author and contact
+		{\href{mailto:\theemail}{\texttt{\theemail}}\qquad\href{https://\thewebsite}{\texttt{\thewebsite}}\qquad\href{\thescholar}{Google Scholar}}\\
+		\vspace*{0em}% gap after contact
+	\end{center}%
+}							% title formatting
+
+% custom lists
+\usepackage{enumitem}		% allow for custom lists
+\setlist{%
+	itemsep=\globalitemsep,%
+	topsep=\globaltopsep,%
+	leftmargin=\globalleftmargin,%
+	label=$\vcenter{\hbox{\tiny$\bullet$}}$%
+}							% set default itemize/enumerate parameters
+
+% custom page numbering
+\usepackage{lastpage}		% determines last page number
+\usepackage{fancyhdr}		% custom footers for page numbering
+\pagestyle{fancy}			% use fancyhdr page numbering
+\renewcommand{\headrulewidth}{0em}	% remove headrule from fancyhdr
+\fancyhf{}					% clear default footer
+\fancyfoot[C]{%
+	\thepage\ of \pageref*{LastPage}%
+}							% custom page numbering
+
+% custom bibliography style
+\bibliographystyle{cvstyle}	% use cvstyle.bst for bold author name
+\makeatletter
+\renewcommand\refname{Publications}	% change bibliography heading
+\renewenvironment{thebibliography}[1]
+{\section*{\refname}%
+	* indicates co-first author and equal contribution.\\
+	\vspace*{\subsectionskip}
+	\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\setlength\itemsep{\globalitemsep}
+		\setlength\topsep{\globaltopsep}
+		\leftmargin\globalleftmargin
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}
+	}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
+\makeatother
+
+% other modifications and custom commands
+\usepackage{bookmark}		% remove bookmark heirarchy warning
+\setlength\parindent{0em}	% disable automatic indentation
+\newcommand{\cvdate}[1]{\hfill#1}			% date style
+\newcommand{\cvdates}[2]{\hfill#1\,--\,#2}	% dates style
+\newcommand{\Cpp}{%
+	C\nolinebreak[4]%
+	\hspace*{-.05em}%
+	\raisebox{.4ex}{\tiny\bf ++}%
+}							% C++ symbol with centered + signs
+
+% long/short/wpaf cv versions
+\usepackage{comment}
+\usepackage{etoolbox}
+\newtoggle{wpaf}	% formatted according to wpaf requirements
